@@ -1,0 +1,17 @@
+{
+  "name": "pisscord-server",
+  "version": "0.0.1",
+  "description": "SERVER for Pisscord",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "mongoose": "^8.11.0"
+  }
+}
