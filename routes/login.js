@@ -9,7 +9,7 @@ router.get('/', (req, res) => {
 // Check login credentials (Read user)
 // Update user information
 // Delete user
-// Those are the implementations needed for a proper login system.
+// Those are the implementations needed for a proper login system. --using CRUD operations.
 
 
 
