@@ -20,6 +20,9 @@ app.use(express.json());
 const loginRouter = require('./routes/login');
 app.use('/login', loginRouter);
 
+const uploadRouter = require('./routes/upload');
+app.use('/upload', uploadRouter);
+
 // Start Server
 app.listen(PORT, () => {
     console.log('Server is running on port 3000');
