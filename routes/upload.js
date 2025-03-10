@@ -33,6 +33,16 @@ router.post('/', upload.fields([{ name: 'mp3', maxCount: 1 }, { name: 'image', m
         return res.status(400).json({ message: 'No files uploaded' });
     }
 
+    const songData = {
+        title: jsonBody.title,
+        artist: jsonBody.artist,
+        year: jsonBody.year,
+        mp3Path: mp3File ? mp3File.filename : null,
+        imagePath: imageFile ? imageFile.filename : null
+    };
+
+    console.log(songData);
+
     res.json({
         message: 'Files uploaded successfully',
         mp3: mp3File ? mp3File.path : null,
