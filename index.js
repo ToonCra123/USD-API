@@ -23,6 +23,9 @@ app.use('/login', loginRouter);
 const uploadRouter = require('./routes/upload');
 app.use('/upload', uploadRouter);
 
+app.use('/img', express.static('uploads/images'));
+app.use('/mp3', express.static('uploads/mp3s'));
+
 // Start Server
 app.listen(PORT, () => {
     console.log('Server is running on port 3000');
