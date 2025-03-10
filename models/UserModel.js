@@ -12,9 +12,9 @@ const userSchema = new mongoose.Schema({
     },
     playlists: {
         type: Array,
+        default: [],
         require: false
-    },
-    
+    }
 });
 
 module.exports = mongoose.model('User', userSchema);

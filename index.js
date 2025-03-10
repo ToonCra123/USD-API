@@ -17,11 +17,14 @@ db.once('open', () => console.log('Connected to database'));
 app.use(express.json());
 
 // Routes
-const loginRouter = require('./routes/login');
-app.use('/login', loginRouter);
-
 const uploadRouter = require('./routes/upload');
 app.use('/upload', uploadRouter);
+
+const playlistRouter = require('./routes/playlist');
+app.use('/playlist', playlistRouter);
+
+const songRouter = require('./routes/song');
+app.use('/song', songRouter);
 
 app.use('/img', express.static('uploads/images'));
 app.use('/mp3', express.static('uploads/mp3s'));

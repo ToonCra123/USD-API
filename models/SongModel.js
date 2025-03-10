@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const songSchema = new mongoose.Schema({
     title: {
         type: String,
+        unique: true,
         required: true
     },
     artist: {
@@ -19,6 +20,11 @@ const songSchema = new mongoose.Schema({
     },
     imagePath: {
         type: String,
+        required: false
+    },
+    listens: {
+        type: Number,
+        default: 0,
         required: false
     }
 });
