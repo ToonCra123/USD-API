@@ -36,6 +36,8 @@ router.patch('/:id', getPlaylist, async (req, res) => {
         res.status(400).json({ message: error.message });
     }
 });
+
+
 router.get('/:id', getPlaylist, (req, res) => {
     res.json(res.playlist);
 });
