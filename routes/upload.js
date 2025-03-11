@@ -4,6 +4,7 @@ const multer = require('multer');
 const path = require('path');
 const fs = require('fs');
 const Song = require('../models/SongModel');
+const User = require('../models/UserModel');
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -69,5 +70,38 @@ router.post('/', upload.fields([{ name: 'mp3', maxCount: 1 }, { name: 'image', m
     }
 });
 
+// now also a way to upload a profile picture
+router.post('/change-pfp', upload.single('pfp'), getUser, async (req, res) => {
+
+    if(!req.file) {
+        return res.status(400).json({ message: 'No file uploaded' });
+    }
+
+    res.user.profilePicture = formatImgUrl(req.file.filename);
+    res.user.save();
+    res.user.password = undefined;
+    res.json(res.user);
+});
+
+
+async function getUser(req, res, next) {
+    let user;
+    try {
+        user = await User.findOne({ username: req.body.username });
+        if (user == null) {
+            return res.status(404).json({ message: 'Cannot find user' });
+        }
+    }
+    catch (err) {
+        return res.status(500).json({ message: err.message });
+    }
+
+    if (user.password != req.body.password) {
+        return res.status(401).json({ message: 'Invalid password' });
+    }
+
+    res.user = user;
+    next();
+}
 
 module.exports = router;

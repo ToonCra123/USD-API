@@ -26,6 +26,10 @@ app.use('/playlist', playlistRouter);
 const songRouter = require('./routes/song');
 app.use('/song', songRouter);
 
+const userRouter = require('./routes/user');
+app.use('/user', userRouter);
+
+// Serve Static Files
 app.use('/img', express.static('uploads/images'));
 app.use('/mp3', express.static('uploads/mp3s'));
 

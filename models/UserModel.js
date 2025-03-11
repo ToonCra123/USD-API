@@ -14,6 +14,11 @@ const userSchema = new mongoose.Schema({
         type: Array,
         default: [],
         require: false
+    },
+    profilePicture: {
+        type: String,
+        default: 'default.jpg',
+        require: false
     }
 });
 
