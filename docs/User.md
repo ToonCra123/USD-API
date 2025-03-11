@@ -3,24 +3,24 @@
 # Schema
 ```json
 {
-    username: {
-        type: String,
-        unique: true,
-        required: true
+    "username": {
+        "type": String,
+        "unique": true,
+        "required": true
     },
-    password: {
-        type: String,
-        require: true
+    "password": {
+        "type": String,
+        "require": true
     },
-    playlists: {
-        type: Array,
-        default: [],
-        require: false
+    "playlists": {
+        "type": Array,
+        "default": [],
+        "require": false
     },
     profilePicture: {
-        type: String,
-        default: 'default.jpg',
-        require: false
+        "type": String,
+        "default": 'default.jpg',
+        "require": false
     }
 }
 ```
