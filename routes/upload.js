@@ -40,9 +40,9 @@ This needs to be changed with actual url when not in development
 
 
 */
-let formatSongUrl = (url) => 'http://localhost:3000/mp3/' + url;
+let formatSongUrl = (url) => 'http://api.toonhosting.net/mp3/' + url;
 
-let formatImgUrl = (url) => 'http://localhost:3000/img/' + url;
+let formatImgUrl = (url) => 'http://api.toonhosting.net/img/' + url;
 
 // Holy Shit what is this
 router.post('/', upload.fields([{ name: 'mp3', maxCount: 1 }, { name: 'image', maxCount: 1 }]), async (req, res) => {
