@@ -2,11 +2,6 @@ const express = require('express');
 const router = express.Router();
 const User = require('../models/UserModel');
 
-router.get('/:id', getUser, (req, res) => {
-    res.user.password = undefined;
-    res.json(res.user);
-});
-
 router.post('/register', async (req, res) => {
     const user = new User({
         username: req.body.username,
