@@ -1,13 +1,13 @@
 {
-  "name": "pisscord-server",
+  "name": "dashify-server",
   "version": "0.0.1",
-  "description": "SERVER for Pisscord",
+  "description": "SERVER for Dashify",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js"
   },
-  "author": "Raging Raccoons",
+  "author": "ToonCra",
   "license": "MIT",
   "dependencies": {
     "dotenv": "^16.4.7",
