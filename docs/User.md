@@ -4,22 +4,22 @@
 ```json
 {
     "username": {
-        "type": String,
+        "type": "String",
         "unique": true,
         "required": true
     },
     "password": {
-        "type": String,
+        "type": "String",
         "require": true
     },
     "playlists": {
-        "type": Array,
+        "type": "Array",
         "default": [],
         "require": false
     },
-    profilePicture: {
-        "type": String,
-        "default": 'default.jpg',
+    "profilePicture": {
+        "type": "String",
+        "default": "default.jpg",
         "require": false
     }
 }
