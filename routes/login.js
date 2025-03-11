@@ -2,6 +2,14 @@ const express = require('express');
 const router = express.Router();
 const Login = require('../models/LoginModel');
 
+/***********************************
+ *                                 *
+ *          DO NOT USE             *
+ *       USE USER SCHEMA           *
+ *                                 *
+************************************/
+
+
 // Get one user (I will remove this later)
 router.get('/', getLogin, (req, res) => {
     res.login.password = undefined;

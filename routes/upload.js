@@ -24,7 +24,11 @@ const storage = multer.diskStorage({
         cb(null, file.fieldname + '-' + uniqueSuffix + path.extname(file.originalname));
     }
 });
-const upload = multer({ storage: storage });
+const upload = multer({ storage: storage,
+    limits: {
+        fileSize: 10 * 1024 * 1024
+    },
+ });
 
 router.get('/', async (req, res) => {
     const songs = await Song.find();
