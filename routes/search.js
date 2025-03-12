@@ -21,6 +21,18 @@ router.get('/song', async (req, res) => {
     }
 });
 
+router.get('/song/trending', async (req, res) => {
+    const { limit } = req.query;
+
+    try {
+        // Find songs that match the query, limit to 10 by default
+        const songs = await Song.find().sort({ views: -1 }).limit(limit ? parseInt(limit) : 10);
+        res.json(songs);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+});
+
 router.get('/artist', async (req, res) => {
     const { name, limit } = req.query;
 

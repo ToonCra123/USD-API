@@ -29,3 +29,11 @@ Ex without limit (Default 10):
 
 Ex with limit:
 `https://api.toonhosting.net/search/playlist/?title=Awesome&limit=50`
+
+
+# Get trending songs
+
+to search make a request to `https://api.toonhosting.net/search/trending/?limit=<limit>`
+
+Ex: 
+`https://api.toonhosting.net/search/trending/?limit=20`
