@@ -26,7 +26,7 @@ router.get('/song/trending', async (req, res) => {
 
     try {
         // Find songs that match the query, limit to 10 by default
-        const songs = await Song.find().sort({ listens: 1 }).limit(limit ? parseInt(limit) : 10);
+        const songs = await Song.find().sort({ listens: -1 }).limit(limit ? parseInt(limit) : 10);
         res.json(songs);
     } catch (error) {
         res.status(500).json({ message: error.message });
