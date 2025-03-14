@@ -8,6 +8,14 @@ router.get('/:id', getSong, (req, res) => {
     res.json(res.song);
 });
 
+router.get('/:id/:shouldListen', getSong, (req, res) => {
+    if (req.params.shoudListen === 'true') {
+        res.song.listens += 1;
+        res.song.save();
+    }
+    res.json(res.song);
+});
+
 async function getSong(req, res, next) {
     let song
     try {
