@@ -19,24 +19,8 @@ app.use(cors())
 app.use(express.json());
 
 // Routes
-const uploadRouter = require('./routes/upload');
-app.use('/upload', uploadRouter);
-
-const playlistRouter = require('./routes/playlist');
-app.use('/playlist', playlistRouter);
-
-const songRouter = require('./routes/song');
-app.use('/song', songRouter);
-
-const userRouter = require('./routes/user');
-app.use('/user', userRouter);
-
-const searchRouter = require('./routes/search');
-app.use('/search', searchRouter);
-
-// Serve Static Files
-app.use('/img', express.static('uploads/images'));
-app.use('/mp3', express.static('uploads/mp3s'));
+const playerRouter = require('./routes/player');
+app.use('/player', playerRouter);
 
 // Start Server
 app.listen(PORT, () => {
